@@ -1,0 +1,10 @@
+{% block group_list %}
+<div class="media-grid" data-module="media-grid">
+  {% block group_list_inner %}
+    {% for group in groups %}
+      {% snippet "group/snippets/tdw_group_item.html", group=group, position=loop.index %}
+    {% endfor %}
+  {% endblock %}
+</div>
+{% endblock %}
+

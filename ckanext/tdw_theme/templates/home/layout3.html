@@ -1,0 +1,38 @@
+<div class="hero" role="main">
+  <div class="container">
+	<h3 class="main_search">Civic Platform <span class="tdw_theme_color"> open data</span> from CASM</h3>
+	<p class="main_search">A Fascinating world.</p>
+      {% block search %}
+        {% snippet 'home/snippets/search.html' %}
+      {% endblock %}
+  </div>
+  <div id="newsFixedLocation" class="container">
+    <div class="row row2">
+      <div class="span6 col2">
+        <div class ="box updates">
+          {% block Recent_Datasets %}
+	     {% snippet 'home/snippets/tdw_theme_popular.html'%}
+          {% endblock %}
+	</div>
+      </div>
+      <div class="span6 col2">
+        {% block recent_changes %}
+	  <div class ="box updates">
+	    <header class="module-heading">
+	      <h3>Recently Updated</h3><br>
+	    </header>
+	    <div class="module-content">
+	      {{ h.recently_changed_packages_activity_stream()}}
+	    </div>
+	  </div>
+	  {#
+          {% for g in h.tdw_theme_recently_changed(5) %}
+             <li>{{ g.display_name }}</li>
+          {% endfor %}
+	  #}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,45 @@
+  <script type="text/javascript">
+    function categories_toggle(divID) {
+      var item = document.getElementById(divID);
+      if (item) {
+        item.className=(item.className=='categories-hidden')?'categories-unhidden':'categories-hidden';
+      }
+<!--
+      var items = document.getElementsByName(divID);
+      for(var i=0; i<items.length; i++) {
+	var item = items[i];
+        if (item) {
+          item.className=(item.className=='categories-hidden')?'categories-unhidden':'categories-hidden';
+        }
+      }
+-->
+    }
+
+    function categories_shiftup(divID) {
+      var item = document.getElementById(divID);
+      if (item) {
+        item.className=(item.className=='module module-search module-narrow module-shallow box search-shiftedup')?'module module-search module-narrow module-shallow box search-notshifted':'module module-search module-narrow module-shallow box search-shiftedup';
+      }
+    }
+
+    function categories_changestate() {
+      categories_toggle('search_categories');
+      categories_shiftup('main_search_bar');
+    }
+  </script>
+
+<div id="categories_link" class="module-categories box">
+  <a href="javascript:categories_changestate()">Browse by {{_('Group')}}</a>
+</div>
+<div id="search_categories" class="categories-hidden">
+  {% block categories_list %}
+{#    {% snippet "group/snippets/tdw_group_list.html", groups=h.tdw_theme_get_groups() %}
+groups=h.groups_available(False) %} 
+{{h.tdw_theme_get_groups()}}#}
+    {% snippet "group/snippets/tdw_group_list.html", groups=h.tdw_theme_get_groups() %}
+    <p style="text-align: right;">
+      <a href="javascript:categories_changestate()">Close</a>
+    </p>
+  {% endblock%}
+</div>
+

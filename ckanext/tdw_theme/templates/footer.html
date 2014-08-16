@@ -1,0 +1,54 @@
+<footer class="site-footer" id="footerFixedLocation">
+  <div class="container">
+    {% block footer_content %}
+      {% block footer_nav %}
+          <div class="footer-links">
+            {% block footer_links %}
+              <a href="">Request a Dataset</a>
+		|  
+              <a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a>
+		|  
+              <a href="http://www.okfn.org/">{{ _('Open Knowledge Foundation') }}</a>
+		| 
+              {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+              <a href="{{ api_url }}">{{ _('CKAN API') }}</a>
+            {% endblock %}
+	 </div>
+{#
+          <ul class="unstyled footer-links">
+            {% block footer_links %}
+              <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
+            {% endblock %}
+          </ul>
+          <ul class="unstyled">
+            {% block footer_links_ckan %}
+              <li><a href="http://www.okfn.org/">{{ _('Open Knowledge Foundation') }}</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="//assets.okfn.org/images/ok_buttons/od_80x15_blue.png"></a></li>
+            {% endblock %}
+          </ul>
+#}
+      {% endblock %}
+  </div>
+  <div class="container">
+      <div class="attribution">
+        {% block footer_attribution %}
+          <p>{% trans %}<strong>Powered by</strong> <a href="http://ckan.org">CKAN</a>{% endtrans %}</p>
+          <a href="http://www.opendefinition.org/okd/"><img src="//assets.okfn.org/images/ok_buttons/od_80x15_blue.png"></a>
+        {% endblock %}
+{#
+        {% block footer_lang %}
+          {% snippet "snippets/language_selector.html" %}
+        {% endblock %}
+#}
+      </div>
+
+    {% endblock %}
+  </div>
+
+  {% block footer_debug %}
+    {% if g.debug %}
+      {% include 'snippets/debug.html' %}
+    {% endif %}
+  {% endblock %}
+</footer>
+

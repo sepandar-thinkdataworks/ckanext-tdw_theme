@@ -1,0 +1,26 @@
+{% set tags = h.get_facet_items_dict('tags', limit=3) %}
+{% set placeholder = _('Search CASM Datasets...') %}
+
+<div id="main_search_bar" class="module module-search module-narrow module-shallow box search-notshifted">
+ <div id="search-circle-box">
+  <svg width="102" height="102">
+    <circle class="search-circle" cx="51" cy="50" r="50"></circle>
+    <image x="6" y="6" height="90" width="90" xlink:href="http://icons.iconarchive.com/icons/icons-land/vista-style-emoticons/256/Study-icon.png" />
+  </svg>
+ </div>
+ <div id="search-input-box">
+  <form class="search-form" method="get" action="{% url_for controller='package', action='search' %}">
+   <div class="search-input control-group search-giant">
+     <input type="text" class="search" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />
+     <button type="submit">
+       <i class="icon-search"></i>
+       <span>{{ _('Search') }}</span>
+     </button>
+   </div>
+  </form>
+  {% block category %}
+    {% snippet 'home/snippets/tdw_theme_categories.html' %}
+  {% endblock %}
+ </div>
+</div>
+

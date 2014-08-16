@@ -1,0 +1,353 @@
+/* =====================================================
+   The "account masthead" bar across the top of the site
+   ===================================================== */
+
+.account-masthead {
+  background-color: white;
+  background: url('TDW-BG.png') no-repeat fixed 0% 0% / 100% auto transparent;
+}
+/* The "bubble" containing the number of new notifications. */
+.account-masthead .account .notifications a span {
+  background-color: black;
+}
+/* The text and icons in the user account info. */
+.account-masthead .account ul li a {
+  color: rgba(92, 178, 209, .8);
+  font-family: "Open Sans",sans-serif;
+  font-weight:600;
+}
+/* The user account info text and icons, when the user's pointer is hovering
+   over them. */
+.account-masthead .account ul li a:hover {
+  color: rgba(92, 178, 209, .8);
+  background-color: rgba(35, 70, 82, 0.9);
+}
+
+
+/* ========================================================================
+   The main masthead bar that contains the site logo, nav links, and search
+   ======================================================================== */
+
+.masthead {
+  background-color: white;
+  background: url('TDW-BG.png') no-repeat fixed 0% 0% / 100% auto transparent;
+}
+
+/* The "navigation pills" in the masthead (the links to Datasets,
+   Organizations, etc) when the user's pointer hovers over them. */
+.masthead .navigation .nav-pills li a:hover {
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+/* The "active" navigation pill (for example, when you're on the /dataset page
+   the "Datasets" link is active). */
+.masthead .navigation .nav-pills li.active a {
+  background-color: rgb(74, 74, 74);
+}
+/* The "box shadow" effect that appears around the search box when it
+   has the keyboard cursor's focus. */
+.masthead input[type="text"]:focus {
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+}
+
+.masthead a{
+  color: rgba(92, 178, 209, .8);
+  font-family: "Open Sans",sans-serif;
+  font-weight:400;
+}
+
+
+/* ===========================================
+   The content in the middle of the front page
+   =========================================== */
+body {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -x-system-font: none;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+}
+
+a{
+  color: rgba(92, 178, 209, .8);
+  font-family: "Open Sans",sans-serif;
+  font-weight:600;
+  font-size: 10pt;
+}
+
+/* Remove the "box shadow" effect around various boxes on the page. */
+.box {
+  box-shadow: none;
+}
+/* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
+   boxes. */
+.hero {
+  border: none;
+  background: none;
+}
+.box {
+  border: none;
+}
+
+.updates{
+  height: 470px;
+}
+
+/* Change the colors of the "Search Your Data" box. */
+.homepage .module-content {
+  color: rgb(68, 68, 68);
+}
+
+.homepage .module-search .search-giant input {
+  border-color: rgb(204, 204, 204);
+  border-left: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  box-shadow: none;
+}
+
+.homepage .search-giant{
+  margin-left: -11px;  
+}
+
+.homepage .search-form{
+  border-bottom: none;
+}
+
+.homepage .search-form .search-input.search-giant input {
+  padding: 15px;
+  font-family: "Open Sans",sans-serif;
+  font-weight:300;
+}
+
+/* Change the background color of the "Popular Tags" box. */
+.homepage .tags {
+  background-color: rgb(61, 61, 61);
+}
+
+.homepage .module-search {
+  padding: 0px;
+  margin-top: 50px; 
+  width: 650px;
+  margin-left:15%;
+  margin-right:15%;
+  background: transparent;
+}
+
+.search-form .search-input.search-giant button i {
+    font-size: 20px;
+}
+.homepage .module-heading{
+	padding-bottom: 14px
+}
+
+.homepage .module:first-child .module-heading{
+  border-top: 1px solid #DDD;
+}
+
+.homepage h3.main_search{
+  font-family: "Open Sans",sans-serif;
+  font-weight:300;
+  font-size: 16pt;
+  margin-top: 150px;
+  padding-left: 285px;
+}
+
+.homepage p.main_search{
+  font-family: "Open Sans",sans-serif;
+  padding-left: 400px;
+}
+
+[role="main"] {
+/*  border-top: 1px solid rgb(204, 204, 204);
+  background: url("../../../base/images/background-tile.png"); */
+  background: url("TDW-BG.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.tdw_theme_color{
+  color: rgba(92, 178, 209, .8);
+}
+
+.dataset-heading a{
+  color: rgba(92, 178, 209, .8);
+}
+
+/* ====================================
+   The footer at the bottom of the site
+   ==================================== */
+
+/* The text in the footer. */
+.site-footer,
+.site-footer label,
+.site-footer small,
+.site-footer a {
+  color: rgb(104, 104, 104);
+  background-color: white;
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  line-height: 1.6em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -x-system-font: none;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+}
+
+.footer-links, .attribution{
+  width: 100%;
+  text-align: center;
+}
+
+.attribution{
+  padding-top: 20px;
+}
+
+/* ======= TDW ======= */
+
+.tdw-title a{
+  color: black;
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -x-system-font: none;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+}
+
+.module-categories{
+  border: 1px solid rgb(204, 204, 204);
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 150px;
+  text-align: center;
+  color: rgba(92, 178, 209, .8);
+  height: 30px;
+  line-height: 32px;
+  margin-top: -82px;
+  margin-left: 600px;
+}
+
+circle.search-circle{
+  stroke: rgb(204, 204, 204);
+  stroke-width: 1;
+  fill: white;
+}
+
+.categories-hidden { 
+  margin-left: 270px;
+  margin-top: -30px;
+  width:480px;
+  max-height: 0px;
+  padding-bottom: 685px;
+  transform: scaleY(0);    
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  -webkit-transform: scaleY(0);    
+  -webkit-transform-origin: top;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transform: scaleY(0);    
+  -moz-transform-origin: top;
+  -moz-transition: transform 0.5s ease;
+}
+
+.categories-unhidden{ 
+  margin-left: 270px;
+  margin-top: -30px;
+  width:480px;  
+  padding-bottom: 545px;
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  -webkit-transform-origin: top;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transform-origin: top;
+  -moz-transition: transform 0.5s ease;
+} 
+
+.homepage .media-item{
+  width:100px;
+  height:100px;
+}
+
+.homepage .media-image{
+  max-width: 50px;
+  max-height: 50px;
+  margin-left:25%;
+}
+
+.homepage .media-grid{
+  border-width: thin;
+  border-color: rgb(204, 204, 204);
+  background: white;
+}
+
+
+.categories-heading{
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -x-system-font: none;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.categories-count{
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -x-system-font: none;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.search-shiftedup{
+  margin-top: -200px;
+  transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+}
+
+.search-notshifted{
+  transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+}
+
+#newsFixedLocation{
+  position: absolute;
+  top: 550px;
+  left: 10%;
+  right: 10%;
+}
+

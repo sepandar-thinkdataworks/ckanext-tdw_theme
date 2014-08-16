@@ -1,0 +1,101 @@
+{% ckan_extends %}
+
+{% block header_account %}
+ {% if c.userobj %}
+  <header class="account-masthead">
+    <div class="container">
+      {% block header_account_container_content %}
+          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+            <ul class="unstyled">
+              {% block header_account_logged %}
+              {% if c.userobj.sysadmin %}
+                <li>
+                  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                    <i class="icon-legal"></i>
+                  </a>
+                </li>
+              {% endif %}
+              <li>
+                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                  <span class="username">{{ c.userobj.display_name }}</span>
+                </a>
+              </li>
+              {% set new_activities = h.new_activities() %}
+              <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+                {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+                  <i class="icon-dashboard"></i>
+                  <span>{{ new_activities }}</span>
+                </a>
+              </li>
+              {% block header_account_settings_link %}
+                <li>
+                  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+                    <i class="icon-cog"></i>
+                  </a>
+                </li>
+              {% endblock %}
+              {% block header_account_log_out_link %}
+                <li>
+                  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                    <i class="icon-signout"></i>
+                  </a>
+                </li>
+              {% endblock %}
+              {% endblock %}
+            </ul>
+          </div>
+{#
+        {% else %}
+          <nav class="account not-authed">
+            <ul class="unstyled">
+              {% block header_account_notlogged %}
+              <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
+              {% if h.check_access('user_create') %}
+                <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
+              {% endif %}
+              {% endblock %}
+            </ul>
+          </nav>
+#}
+      {% endblock %}
+    </div>
+  </header>
+ {% endif %}
+{% endblock %}
+	
+
+      {% block header_logo %}
+        {% if g.site_logo %}
+          <a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+        {% else %}
+          <h4>
+	    <div class="tdw-title">
+              <a href="{{ h.url('home') }}">open data <br> platform</a>
+	    </div>
+          </h4>
+          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+        {% endif %}
+      {% endblock %}
+
+      {% block header_site_navigation %}
+        <nav class="section navigation">
+          <ul class="nav nav-pills">
+            {% block header_site_navigation_tabs %}
+              {{ h.build_nav_main(
+                ('search', _('Datasets')),
+                ('group_index', _('Groups')),
+                ('suggest',_('Suggest'))
+              ) }}
+//              <li><a href="http://casem-acmse.org/news/">News</a></li>
+              {{ h.build_nav_main(
+                ('about', _('About'))
+              ) }}
+            {% endblock %}
+          </ul>
+        </nav>
+      {% endblock %}
+
+{% block header_site_search %}
+{% endblock %}
